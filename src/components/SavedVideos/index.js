@@ -61,7 +61,7 @@ const SavedVideos = () => (
                     No saved videos found
                   </NoSavesVideosText>
                   <NoSavedVideosSuggestion darkMode={isDarkTheme}>
-                    Save your videos by clicking a button
+                    You can save your videos while watching them
                   </NoSavedVideosSuggestion>
                 </NoSavedVideosContainer>
               ) : (
