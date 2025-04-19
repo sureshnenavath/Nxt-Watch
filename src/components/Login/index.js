@@ -109,7 +109,7 @@ class Login extends Component {
                   <InputBox
                     id="username"
                     type="text"
-                    placeholder="Enter Username"
+                    placeholder="Suresh"
                     value={username}
                     onChange={this.onChangeUsername}
                   />
@@ -121,7 +121,7 @@ class Login extends Component {
                   <InputBox
                     id="password"
                     type="password"
-                    placeholder="Enter Password"
+                    placeholder="test@123"
                     value={password}
                     onChange={this.onChangePassword}
                   />
