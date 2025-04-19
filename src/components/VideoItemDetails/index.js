@@ -173,7 +173,7 @@ class VideoItemDetails extends Component {
                     className={`icon-in-video-item ${likeIconClassName}`}
                   />
                   <Button
-                    active={isLike}
+                    style={{color: isLike ? '#2563eb' : '#64748b'}}
                     onClick={onLikeButtonClicked}
                   >
                     Like
@@ -183,7 +183,7 @@ class VideoItemDetails extends Component {
                     className={`icon-in-video-item ${dislikeIconClassName}`}
                   />
                   <Button
-                    active={isDislike}
+                    style={{color: isDislike ? '#2563eb' : '#64748b'}}
                     onClick={onDislikeButtonClicked}
                   >
                     Dislike

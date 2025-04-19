@@ -1,18 +1,13 @@
-.dark {
-  color: #f9f9f9;
-}
+/* src/components/VideoItemDetails/index.css */
 
-.light {
-  color: #181818;
-}
-
-.icon-in-video-item {
-  font-size: 21px;
-  margin-top: 5px;
-  margin-right: 9px;
-  cursor: pointer;
-}
-
-.selected {
+.like-button-active {
   color: #2563eb;
+}
+
+.dislike-button-active {
+  color: #2563eb;
+}
+
+.not-selected {
+  color: #64748b;
 }

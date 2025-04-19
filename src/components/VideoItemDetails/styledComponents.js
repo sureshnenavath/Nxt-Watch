@@ -45,7 +45,7 @@ export const AboutContainer = styled.div`
 export const Description = styled.p`
   font-size: 17px;
   margin-top: 28px;
-  margin-bottom; 0px;
+  margin-bottom: 0px;
   color: ${props => (props.darkMode ? '#94a3b8' : '#181818')};
 `
 
@@ -77,7 +77,6 @@ export const Button = styled.button`
   margin-right: 11px;
   border: none;
   cursor: pointer;
-  color: ${props => (props.active ? '#2563eb' : '#64748b')};
 `
 
 export const Title = styled.p`
