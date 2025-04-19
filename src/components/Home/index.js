@@ -167,12 +167,13 @@ class Home extends Component {
               <HomeContainer darkMode={isDarkTheme} data-testid="home">
                 <SideBar />
                 <HomeContentContainer>
-                  <BannerContainer className={bannerClass} data-testid="banner">
-                    <CloseButton
-                      type="button"
-                      data-testid="close"
-                      onClick={this.closeBannerClicked}
-                    >
+                  {bannerVisible && (
+                    <BannerContainer className={bannerClass} data-testid="banner">
+                      <CloseButton
+                        type="button"
+                        data-testid="close"
+                        onClick={this.closeBannerClicked}
+                      >
                       <GrClose />
                     </CloseButton>
                     <BannerLogo
@@ -184,9 +185,10 @@ class Home extends Component {
                     </BannerHeading>
                     <BannerButton>GET IT NOW</BannerButton>
                   </BannerContainer>
+                )}
 
-                  <InputBox
-                    id="search"
+                <InputBox
+                  id="search"
                     type="search"
                     value={searchInputValue}
                     placeholder="Search"

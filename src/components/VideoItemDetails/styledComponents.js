@@ -77,22 +77,6 @@ export const Button = styled.button`
   margin-right: 11px;
   border: none;
   cursor: pointer;
-  color: ${props => (props.active ? '#2563eb' : '#64748b')} !important;
-`
-
-export const DislikeButton = styled.button`
-  background-color: transparent;
-  margin-right: 11px;
-  border: none;
-  cursor: pointer;
-  color: ${props => (props.active ? '#2563eb' : '#64748b')} !important;
-`
-
-export const SaveButton = styled.button`
-  background-color: transparent;
-  margin-right: 11px;
-  border: none;
-  cursor: pointer;
   color: ${props => (props.active ? '#2563eb' : '#64748b')};
 `
 
@@ -119,7 +103,7 @@ export const ProfileContainer = styled.div`
 
 export const Profile = styled.img`
     height: 51px;
-    width: 51px:
+    width: 51px;
     border-radius: 51px;
 `
 

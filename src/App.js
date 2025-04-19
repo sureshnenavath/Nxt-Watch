@@ -24,7 +24,23 @@ class App extends Component {
 
   saveVideoButtonClicked = data => {
     const {savedVideosList} = this.state
-    this.setState({savedVideosList: [...savedVideosList, data]})
+    const videoIndex = savedVideosList.findIndex(
+      eachVideo => eachVideo.videoDetails.id === data.videoDetails.id,
+    )
+
+    if (videoIndex === -1) {
+      this.setState({savedVideosList: [...savedVideosList, data]})
+    } else {
+      this.removeVideoFromSavedList(data.videoDetails.id)
+    }
+  }
+
+  removeVideoFromSavedList = videoId => {
+    const {savedVideosList} = this.state
+    const updatedSavedVideosList = savedVideosList.filter(
+      eachVideo => eachVideo.videoDetails.id !== videoId,
+    )
+    this.setState({savedVideosList: updatedSavedVideosList})
   }
 
   render() {
@@ -36,6 +52,7 @@ class App extends Component {
           isDarkTheme,
           toggleTheme: this.toggleTheme,
           saveVideoButtonClicked: this.saveVideoButtonClicked,
+          removeVideoFromSavedList: this.removeVideoFromSavedList,
           savedVideosList,
         }}
       >

@@ -120,17 +120,29 @@ class VideoItemDetails extends Component {
     return (
       <ThemeContext.Consumer>
         {value => {
-          const {isDarkTheme, saveVideoButtonClicked} = value
+          const {
+            isDarkTheme,
+            saveVideoButtonClicked,
+            removeVideoFromSavedList,
+            savedVideosList,
+          } = value
+
           const likeIconClassName = isLike ? 'selected' : 'not-selected'
           const dislikeIconClassName = isDislike ? 'selected' : 'not-selected'
-          const saveButtonIconClassName = isSaved ? 'selected' : 'not-selected'
-          const saveButtonText = isSaved ? 'Saved' : 'Save'
+
+          const isVideoSaved = savedVideosList.some(
+            eachVideo => eachVideo.videoDetails.id === videoDetails.id,
+          )
+
+          const saveButtonIconClassName = isVideoSaved ? 'selected' : 'not-selected'
+          const saveButtonText = isVideoSaved ? 'Saved' : 'Save'
 
           const onSaveButtonClicked = () => {
-            this.setState(prevState => ({isSaved: !prevState.isSaved}))
-            saveVideoButtonClicked({
-              videoDetails,
-            })
+            if (isVideoSaved) {
+              removeVideoFromSavedList(videoDetails.id)
+            } else {
+              saveVideoButtonClicked({videoDetails})
+            }
           }
 
           const onLikeButtonClicked = () => {
@@ -162,7 +174,6 @@ class VideoItemDetails extends Component {
                   />
                   <Button
                     active={isLike}
-                    style={{color: '#64748b'}}
                     onClick={onLikeButtonClicked}
                   >
                     Like
@@ -173,7 +184,6 @@ class VideoItemDetails extends Component {
                   />
                   <Button
                     active={isDislike}
-                    style={{color: '#64748b'}}
                     onClick={onDislikeButtonClicked}
                   >
                     Dislike
