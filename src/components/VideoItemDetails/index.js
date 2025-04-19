@@ -127,9 +127,6 @@ class VideoItemDetails extends Component {
             savedVideosList,
           } = value
 
-          const likeIconClassName = isLike ? 'selected' : 'not-selected'
-          const dislikeIconClassName = isDislike ? 'selected' : 'not-selected'
-
           const isVideoSaved = savedVideosList.some(
             eachVideo => eachVideo.videoDetails.id === videoDetails.id,
           )
@@ -141,7 +138,7 @@ class VideoItemDetails extends Component {
             if (isVideoSaved) {
               removeVideoFromSavedList(videoDetails.id)
             } else {
-              saveVideoButtonClicked({videoDetails})
+              saveVideoButtonClicked({videoDetails, isLike, isDislike})
             }
           }
 
@@ -170,7 +167,7 @@ class VideoItemDetails extends Component {
                 </LeftDynamicContainer>
                 <RightDynamicContainer>
                   <AiOutlineLike
-                    className={`icon-in-video-item ${likeIconClassName}`}
+                    style={{ color: isLike ? '#2563eb' : '#64748b' }}
                   />
                   <Button
                     style={{color: isLike ? '#2563eb' : '#64748b'}}
@@ -180,7 +177,7 @@ class VideoItemDetails extends Component {
                   </Button>
 
                   <AiOutlineDislike
-                    className={`icon-in-video-item ${dislikeIconClassName}`}
+                    style={{ color: isDislike ? '#2563eb' : '#64748b' }}
                   />
                   <Button
                     style={{color: isDislike ? '#2563eb' : '#64748b'}}

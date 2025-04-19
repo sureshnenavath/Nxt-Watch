@@ -29,9 +29,9 @@ class App extends Component {
     )
 
     if (videoIndex === -1) {
-      this.setState({savedVideosList: [...savedVideosList, data]})
+      this.setState({savedVideosList: [...savedVideosList, data]});
     } else {
-      this.removeVideoFromSavedList(data.videoDetails.id)
+      this.removeVideoFromSavedList(data.videoDetails.id);
     }
   }
 
